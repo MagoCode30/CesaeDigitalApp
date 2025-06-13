@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashScreen"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/cesaelogo"
+        android:layout_centerInParent="true"
+        android:id="@+id/cesaelogo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cesaelogo"
+        android:text="Centro para o Desenvolvimento"
+        android:layout_centerInParent="true"
+        android:id="@+id/titulo1"
+        android:textSize="18dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo1"
+        android:text="de Competências Digitais"
+        android:layout_centerInParent="true"
+        android:textSize="18dp"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titulo1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        app:indicatorSize="55dp"
+        app:trackThickness="4dp"
+        app:indicatorColor="#512DA8"
+        app:trackColor="#FFFFFF"
+        android:indeterminate="true"/>
+
+
+</RelativeLayout>
