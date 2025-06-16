@@ -7,10 +7,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cesaeapp.databinding.ItemCursoBinding
 import com.example.cesaeapp.model.Curso
 
+/**
+ * Adapter do RecyclerView para listar cursos.
+ * Liga a lista de objetos Curso ao layout de cada item.
+ */
 class CursoAdapter(
     private var cursos: List<Curso>
 ) : RecyclerView.Adapter<CursoAdapter.CursoViewHolder>() {
 
+    // ViewHolder que encapsula o binding do item
     inner class CursoViewHolder(val binding: ItemCursoBinding)
         : RecyclerView.ViewHolder(binding.root)
 
@@ -22,19 +27,23 @@ class CursoAdapter(
 
     override fun onBindViewHolder(holder: CursoViewHolder, position: Int) {
         val curso = cursos[position]
+        // Preenche os dados do curso no layout do item
         holder.binding.txtNomeCurso.text = curso.nome
         holder.binding.txtLocal.text = curso.local
         holder.binding.txtDataInicio.text = "Início: ${curso.dataInicio}"
         holder.binding.txtPreco.text = "${curso.preco} €"
+        // Obtém a imagem associada ao curso dinamicamente
         val context = holder.itemView.context
         val resourceId = context.resources.getIdentifier(
             curso.imagem, "drawable", context.packageName
         )
         holder.binding.imgCurso.setImageResource(resourceId)
 
+        // Ao clicar no item, abre a activity de detalhes do curso
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetalhesCurso::class.java)
+            // Passa todos os campos do curso via intent
             intent.putExtra("id", curso.id)
             intent.putExtra("nome", curso.nome)
             intent.putExtra("imagem", curso.imagem)
@@ -50,6 +59,9 @@ class CursoAdapter(
 
     override fun getItemCount(): Int = cursos.size
 
+    /**
+     * Atualiza a lista de cursos e notifica o RecyclerView.
+     */
     fun submitList(newCursos: List<Curso>) {
         cursos = newCursos
         notifyDataSetChanged()

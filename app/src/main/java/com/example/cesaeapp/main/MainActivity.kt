@@ -14,32 +14,42 @@ import com.example.cesaeapp.projetos.ProjetosActivity
 import com.example.cesaeapp.servicos.ServicosActivity
 import com.example.cesaeapp.sobre.SobreActivity
 
+/**
+ * Activity principal do CesaeApp.
+ * Exibe o menu principal com navegação para as diferentes áreas do app.
+ */
 class MainActivity : AppCompatActivity() {
+
+    // ViewBinding para aceder facilmente às views do layout
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // Garante que o layout ocupa toda a área do ecrã
         setContentView(binding.root)
+
+        // Ajusta o layout para não sobrepor as system bars (barra de status/nav)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        binding.buttonCursos.setOnClickListener() {
+        // Navegação para as diferentes Activities do menu principal
+        binding.buttonCursos.setOnClickListener {
             startActivity(Intent(this, CursosActivity::class.java))
         }
-        binding.buttonProjetos.setOnClickListener() {
+        binding.buttonProjetos.setOnClickListener {
             startActivity(Intent(this, ProjetosActivity::class.java))
         }
-        binding.buttonServicos.setOnClickListener() {
+        binding.buttonServicos.setOnClickListener {
             startActivity(Intent(this, ServicosActivity::class.java))
         }
-        binding.buttonContactos.setOnClickListener() {
+        binding.buttonContactos.setOnClickListener {
             startActivity(Intent(this, ContactosActivity::class.java))
         }
-        binding.buttonSobre.setOnClickListener() {
+        binding.buttonSobre.setOnClickListener {
             startActivity(Intent(this, SobreActivity::class.java))
         }
     }

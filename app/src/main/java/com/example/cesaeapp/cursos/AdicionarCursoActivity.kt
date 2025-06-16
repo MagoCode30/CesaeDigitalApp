@@ -11,11 +11,19 @@ import com.example.cesaeapp.model.Curso
 import com.example.cesaeapp.viewmodel.CursoViewModel
 import java.util.Calendar
 
+/**
+ * Activity para adicionar um novo curso.
+ * Inclui seleção de imagem, datas com DatePicker e validação simples.
+ */
 class AdicionarCursoActivity : AppCompatActivity() {
+
+    // ViewBinding para aceder facilmente às views
     private lateinit var binding: ActivityAdicionarCursoBinding
+
+    // ViewModel para interagir com a camada de dados
     private val viewModel: CursoViewModel by viewModels()
 
-    // Nomes das imagens disponíveis
+    // Lista de nomes de imagens disponíveis para seleção
     private val imagensDisponiveis = listOf(
         "bancoimagem1", "bancoimagem2", "bancoimagem3", "bancoimagem4", "bancoimagem5"
     )
@@ -26,12 +34,14 @@ class AdicionarCursoActivity : AppCompatActivity() {
         binding = ActivityAdicionarCursoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configuração da toolbar com botão de back
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Adicionar Curso"
-        // Configura a RecyclerView horizontal para imagens
+
+        // Configura a RecyclerView horizontal para seleção de imagens
         val adapter = ImagemEscolhaAdapter(imagensDisponiveis) { imagem ->
-            imagemSelecionada = imagem
+            imagemSelecionada = imagem // Guarda imagem selecionada pelo utilizador
         }
         binding.rvImagens.adapter = adapter
         binding.rvImagens.layoutManager =
@@ -40,6 +50,7 @@ class AdicionarCursoActivity : AppCompatActivity() {
         // Por defeito, seleciona a primeira imagem
         imagemSelecionada = imagensDisponiveis.first()
 
+        // Mostra DatePicker ao clicar nos campos de data
         binding.editDataInicio.setOnClickListener {
             mostrarDatePicker(binding.editDataInicio)
         }
@@ -47,7 +58,7 @@ class AdicionarCursoActivity : AppCompatActivity() {
             mostrarDatePicker(binding.editDataFim)
         }
 
-        // Botão Guardar
+        // Botão Guardar: lê dados do formulário, cria objeto Curso, e envia para o ViewModel
         binding.btnGuardar.setOnClickListener {
             val curso = Curso(
                 nome = binding.editNome.text.toString(),
@@ -60,9 +71,13 @@ class AdicionarCursoActivity : AppCompatActivity() {
                 imagem = imagemSelecionada ?: imagensDisponiveis[0]
             )
             viewModel.insert(curso)
-            finish()
+            finish() // Fecha a activity após guardar
         }
     }
+
+    /**
+     * Mostra um DatePickerDialog e coloca a data escolhida no EditText.
+     */
     private fun mostrarDatePicker(editText: EditText) {
         val cal = Calendar.getInstance()
         val dpd = DatePickerDialog(
@@ -76,6 +91,9 @@ class AdicionarCursoActivity : AppCompatActivity() {
         dpd.show()
     }
 
+    /**
+     * Handler para o botão de voltar da toolbar.
+     */
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true

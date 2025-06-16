@@ -3,23 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-    <!-- Nome -->
+    <!-- Toolbar Material -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="?attr/actionBarSize"
         android:background="#6f42c1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navigationIconTint="@android:color/white"
         app:title="Adicionar Curso"
         app:titleTextColor="@android:color/white" />
 
+    <!-- Campo Nome -->
     <EditText
         android:id="@+id/editNome"
         android:layout_width="0dp"
@@ -30,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:layout_marginTop="20dp"/>
 
-    <!-- Local -->
+    <!-- Campo Local -->
     <EditText
         android:id="@+id/editLocal"
         android:layout_width="0dp"
@@ -41,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Data Início -->
+    <!-- Campo Data Início -->
     <EditText
         android:id="@+id/editDataInicio"
         android:layout_width="0dp"
@@ -54,7 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Data Fim -->
+    <!-- Campo Data Fim -->
     <EditText
         android:id="@+id/editDataFim"
         android:layout_width="0dp"
@@ -67,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Preço -->
+    <!-- Campo Preço -->
     <EditText
         android:id="@+id/editPreco"
         android:layout_width="0dp"
@@ -79,7 +78,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Duração -->
+    <!-- Campo Duração -->
     <EditText
         android:id="@+id/editDuracao"
         android:layout_width="0dp"
@@ -90,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Edição -->
+    <!-- Campo Edição -->
     <EditText
         android:id="@+id/editEdicao"
         android:layout_width="0dp"

@@ -12,11 +12,16 @@ import com.example.cesaeapp.R
 import com.example.cesaeapp.databinding.ActivityCursosBinding
 import com.example.cesaeapp.viewmodel.CursoViewModel
 
+/**
+ * Activity que mostra a lista de cursos com ordenação dinâmica.
+ * Permite adicionar novos cursos e consultar detalhes.
+ */
 class CursosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCursosBinding
     private lateinit var adapter: CursoAdapter
 
+    // ViewModel para gestão de dados do Room
     private val viewModel: CursoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,25 +30,29 @@ class CursosActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
+        // Configuração da Toolbar com botão de navegação
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Cursos"
 
+        // Ajuste de layout para system bars (edge-to-edge)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        // Configuração do RecyclerView
         adapter = CursoAdapter(listOf())
         binding.listaCursos.adapter = adapter
         binding.listaCursos.layoutManager = LinearLayoutManager(this)
 
+        // Observa alterações na lista (ordenada) de cursos
         viewModel.cursosOrdenados.observe(this) { cursos ->
             adapter.submitList(cursos)
         }
 
-        // Listener para os botões de ordenação (MaterialButtonToggleGroup)
+        // Grupo de botões para ordenação dinâmica da lista
         binding.toggleGroupOrder.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (isChecked) {
                 when (checkedId) {
@@ -54,14 +63,20 @@ class CursosActivity : AppCompatActivity() {
                 }
             }
         }
+
+        // FloatingActionButton para adicionar novo curso
         binding.fabAdicionar.setOnClickListener {
             val intent = Intent(this, AdicionarCursoActivity::class.java)
             startActivity(intent)
         }
     }
 
+    /**
+     * Handler para o botão de voltar da toolbar.
+     */
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true
     }
 }
+

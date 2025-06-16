@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.SplashScreen"
-    >
+    tools:context=".main.SplashScreen">
 
+    <!-- Logotipo -->
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +15,7 @@
         android:layout_centerInParent="true"
         android:id="@+id/cesaelogo"/>
 
+    <!-- Texto principal -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,15 +23,18 @@
         android:text="Centro para o Desenvolvimento"
         android:layout_centerInParent="true"
         android:id="@+id/titulo1"
-        android:textSize="18dp"/>
+        android:textSize="18sp"/>
+
+    <!-- Texto secundário -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/titulo1"
         android:text="de Competências Digitais"
         android:layout_centerInParent="true"
-        android:textSize="18dp"/>
+        android:textSize="18sp"/>
 
+    <!-- Indicador de progresso -->
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/spinner"
         android:layout_width="wrap_content"
@@ -43,6 +47,4 @@
         app:indicatorColor="#6f42c1"
         app:trackColor="#FFFFFF"
         android:indeterminate="true"/>
-
-
 </RelativeLayout>

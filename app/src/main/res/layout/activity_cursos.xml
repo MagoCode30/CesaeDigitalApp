@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".cursos.CursosActivity">
 
+    <!-- Toolbar principal -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true" />
 
-
+    <!-- Botões de ordenação -->
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleGroupOrder"
         android:layout_width="match_parent"
@@ -28,8 +29,7 @@
         android:layout_marginHorizontal="12dp"
         app:singleSelection="true"
         app:checkedButton="@id/btnDataDesc"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNomeAsc"
@@ -72,6 +72,7 @@
             android:backgroundTint="#6f42c1"/>
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
+    <!-- Lista de cursos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaCursos"
         android:layout_width="match_parent"
@@ -81,6 +82,7 @@
         android:clipToPadding="false"
         android:paddingBottom="8dp"/>
 
+    <!-- Botão adicionar curso -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdicionar"
         android:layout_width="wrap_content"
