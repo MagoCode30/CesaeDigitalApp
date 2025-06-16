@@ -117,4 +117,33 @@
                 android:paddingTop="12dp"/>
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Editar"
+            app:icon="@drawable/editar"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:layout_marginEnd="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRemover"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Remover"
+            app:icon="@drawable/apagar"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            android:backgroundTint="@android:color/holo_red_light"/>
+    </LinearLayout>
 </LinearLayout>

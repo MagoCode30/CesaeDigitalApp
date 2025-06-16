@@ -62,6 +62,10 @@ class CursoViewModel(application: Application) : AndroidViewModel(application) {
             onResult(curso)
         }
     }
+
+    suspend fun updateCurso(curso: Curso) {
+        repository.update(curso)
+    }
 }
 
 

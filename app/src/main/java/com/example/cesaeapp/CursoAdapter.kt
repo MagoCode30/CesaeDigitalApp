@@ -35,6 +35,7 @@ class CursoAdapter(
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetalhesCurso::class.java)
+            intent.putExtra("id", curso.id)
             intent.putExtra("nome", curso.nome)
             intent.putExtra("imagem", curso.imagem)
             intent.putExtra("local", curso.local)
