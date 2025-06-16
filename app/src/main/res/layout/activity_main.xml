@@ -36,7 +36,8 @@
         android:layout_margin="12dp"
         android:layout_columnWeight="1"
         android:clickable="true"
-        android:focusable="true">
+        android:focusable="true"
+        android:id="@+id/buttonCursos">
 
         <LinearLayout
             android:orientation="vertical"
@@ -72,7 +73,8 @@
             android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:id="@+id/buttonProjetos">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -107,7 +109,8 @@
             android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:id="@+id/buttonServicos">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -142,7 +145,8 @@
             android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:id="@+id/buttonContactos">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -178,7 +182,8 @@
             android:layout_margin="12dp"
             android:layout_columnSpan="2"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:id="@+id/buttonSobre">
 
             <LinearLayout
                 android:orientation="vertical"

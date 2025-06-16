@@ -11,7 +11,7 @@ data class Curso(
     val dataInicio: String,
     val dataFim: String,
     val preco: Double,
-    val duracao: Int,
+    val duracao: String,
     val edicao: String,
-    val imagemUrl: String
+    val imagemResId: Int
 )
