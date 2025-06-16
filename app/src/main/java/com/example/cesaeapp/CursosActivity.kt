@@ -1,5 +1,6 @@
 package com.example.cesaeapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -14,7 +15,6 @@ class CursosActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCursosBinding
     private lateinit var adapter: CursoAdapter
-
 
     private val viewModel: CursoViewModel by viewModels()
 
@@ -34,17 +34,31 @@ class CursosActivity : AppCompatActivity() {
             insets
         }
 
-
         adapter = CursoAdapter(listOf())
         binding.listaCursos.adapter = adapter
         binding.listaCursos.layoutManager = LinearLayoutManager(this)
 
-
-        viewModel.allCursos.observe(this) { cursos ->
+        viewModel.cursosOrdenados.observe(this) { cursos ->
             adapter.submitList(cursos)
         }
 
+        // Listener para os botões de ordenação (MaterialButtonToggleGroup)
+        binding.toggleGroupOrder.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            if (isChecked) {
+                when (checkedId) {
+                    R.id.btnNomeAsc -> viewModel.mudarOrdem(CursoViewModel.OrdemCurso.NOME_ASC)
+                    R.id.btnNomeDesc -> viewModel.mudarOrdem(CursoViewModel.OrdemCurso.NOME_DESC)
+                    R.id.btnDataAsc -> viewModel.mudarOrdem(CursoViewModel.OrdemCurso.DATA_ASC)
+                    R.id.btnDataDesc -> viewModel.mudarOrdem(CursoViewModel.OrdemCurso.DATA_DESC)
+                }
+            }
         }
+        binding.fabAdicionar.setOnClickListener {
+            val intent = Intent(this, AdicionarCursoActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return true

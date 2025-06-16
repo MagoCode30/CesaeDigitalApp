@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- Nome -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIconTint="@android:color/white"
+        app:title="Adicionar Curso"
+        app:titleTextColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/editNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nome do curso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Local -->
+    <EditText
+        android:id="@+id/editLocal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Local"
+        app:layout_constraintTop_toBottomOf="@id/editNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Data Início -->
+    <EditText
+        android:id="@+id/editDataInicio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Data de início"
+        android:focusable="false"
+        android:inputType="none"
+        app:layout_constraintTop_toBottomOf="@id/editLocal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Data Fim -->
+    <EditText
+        android:id="@+id/editDataFim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Data de fim"
+        android:focusable="false"
+        android:inputType="none"
+        app:layout_constraintTop_toBottomOf="@id/editDataInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Preço -->
+    <EditText
+        android:id="@+id/editPreco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Preço (€)"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/editDataFim"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Duração -->
+    <EditText
+        android:id="@+id/editDuracao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Duração"
+        app:layout_constraintTop_toBottomOf="@id/editPreco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Edição -->
+    <EditText
+        android:id="@+id/editEdicao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Edição"
+        app:layout_constraintTop_toBottomOf="@id/editDuracao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- RecyclerView horizontal para seleção de imagem -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvImagens"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toBottomOf="@id/editEdicao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botão Guardar -->
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        app:layout_constraintTop_toBottomOf="@id/rvImagens"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

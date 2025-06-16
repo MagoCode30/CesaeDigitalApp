@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CesaeApp"
         tools:targetApi="31">
         <activity
+            android:name=".AdicionarCursoActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetalhesCurso"
             android:exported="false" />
         <activity

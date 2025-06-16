@@ -26,13 +26,17 @@ class CursoAdapter(
         holder.binding.txtLocal.text = curso.local
         holder.binding.txtDataInicio.text = "Início: ${curso.dataInicio}"
         holder.binding.txtPreco.text = "${curso.preco} €"
-        holder.binding.imgCurso.setImageResource(curso.imagemResId)
+        val context = holder.itemView.context
+        val resourceId = context.resources.getIdentifier(
+            curso.imagem, "drawable", context.packageName
+        )
+        holder.binding.imgCurso.setImageResource(resourceId)
 
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetalhesCurso::class.java)
             intent.putExtra("nome", curso.nome)
-            intent.putExtra("imagemResId", curso.imagemResId)
+            intent.putExtra("imagem", curso.imagem)
             intent.putExtra("local", curso.local)
             intent.putExtra("dataInicio", curso.dataInicio)
             intent.putExtra("dataFim", curso.dataFim)

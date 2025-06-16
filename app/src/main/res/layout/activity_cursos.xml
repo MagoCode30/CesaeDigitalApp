@@ -11,19 +11,78 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#512DA8"
+        android:background="?attr/colorPrimary"
         app:title="Cursos"
         app:titleTextColor="@android:color/white"
         app:navigationIconTint="@android:color/white"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
+    <!-- MaterialButtonToggleGroup para ordenação -->
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroupOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="12dp"
+        app:singleSelection="true"
+        app:checkedButton="@id/btnDataDesc"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNomeAsc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A-Z"
+            android:checkable="true"
+            app:cornerRadius="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNomeDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Z-A"
+            android:checkable="true"
+            app:cornerRadius="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDataAsc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Data ↑"
+            android:checkable="true"
+            app:cornerRadius="10dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDataDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Data ↓"
+            android:checkable="true"
+            app:cornerRadius="10dp"/>
+    </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listaCursos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"/>
+        android:layout_below="@id/toggleGroupOrder"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"/>
 
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        app:srcCompat="@drawable/adicionar"
+        android:contentDescription="Adicionar Curso" />
 </RelativeLayout>

@@ -26,7 +26,9 @@ class DetalhesCurso : AppCompatActivity() {
         supportActionBar?.title = "Detalhes do Curso"
 
         binding.txtNomeCurso.text = intent.getStringExtra("nome")
-        binding.imgCurso.setImageResource(intent.getIntExtra("imagemResId", R.drawable.cesaelogo))
+        val nomeImagem = intent.getStringExtra("imagem")
+        val resourceId = resources.getIdentifier(nomeImagem ?: "", "drawable", packageName)
+        binding.imgCurso.setImageResource(resourceId)
         binding.txtLocal.text = "Local: " + intent.getStringExtra("local")
         binding.txtDataInicio.text = "Início: " + intent.getStringExtra("dataInicio")
         binding.txtDataFim.text = "Fim: " + intent.getStringExtra("dataFim")

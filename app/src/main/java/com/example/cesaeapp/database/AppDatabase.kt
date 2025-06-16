@@ -42,7 +42,7 @@ abstract class AppDatabase : RoomDatabase() {
                                         preco = 150.00,
                                         duracao = "300 h",
                                         edicao = "Segunda",
-                                        imagemResId = R.drawable.analisededados)
+                                        imagem = "analisededados")
                                 )
                                 getDatabase(context).cursoDao().insert(
                                     Curso(nome = "Front-end Developer",
@@ -52,7 +52,7 @@ abstract class AppDatabase : RoomDatabase() {
                                         preco = 400.00,
                                         duracao = "1050 h",
                                         edicao = "Primeira",
-                                        imagemResId = R.drawable.frontend)
+                                        imagem = "frontend")
                                 )
                                 getDatabase(context).cursoDao().insert(
                                     Curso(nome = "AWS RE/START - Cloud Computing",
@@ -62,7 +62,7 @@ abstract class AppDatabase : RoomDatabase() {
                                         preco = 400.00,
                                         duracao = "1200 h",
                                         edicao = "Terceira",
-                                        imagemResId = R.drawable.aws)
+                                        imagem = "aws")
                                 )
                             }
                         }
