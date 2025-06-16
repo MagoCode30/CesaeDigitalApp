@@ -1,10 +1,11 @@
-package com.example.cesaeapp
+package com.example.cesaeapp.contactos
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.cesaeapp.R
 
 class ContactosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

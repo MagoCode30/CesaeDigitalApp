@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#512DA8"
+        android:background="#6f42c1"
         app:title="Detalhes do Curso"
         app:titleTextColor="@android:color/white"
         app:navigationIconTint="@android:color/white"
@@ -110,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Preço: 400.00 €"
-                android:textColor="#FF512DA8"
+                android:textColor="#6f42c1"
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:textAlignment="center"
@@ -133,6 +133,7 @@
             app:icon="@drawable/editar"
             app:iconGravity="textStart"
             app:iconPadding="8dp"
+            android:backgroundTint="#6f42c1"
             android:layout_marginEnd="8dp"/>
 
         <com.google.android.material.button.MaterialButton

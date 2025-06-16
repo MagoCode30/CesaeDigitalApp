@@ -1,4 +1,4 @@
-package com.example.cesaeapp
+package com.example.cesaeapp.cursos
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cesaeapp.R
 import com.example.cesaeapp.databinding.ActivityCursosBinding
 import com.example.cesaeapp.viewmodel.CursoViewModel
 

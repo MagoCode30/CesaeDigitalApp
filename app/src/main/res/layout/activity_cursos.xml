@@ -5,19 +5,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CursosActivity">
+    tools:context=".cursos.CursosActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#6f42c1"
         app:title="Cursos"
         app:titleTextColor="@android:color/white"
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true" />
 
-    <!-- MaterialButtonToggleGroup para ordenação -->
+
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleGroupOrder"
         android:layout_width="match_parent"
@@ -28,7 +28,8 @@
         android:layout_marginHorizontal="12dp"
         app:singleSelection="true"
         app:checkedButton="@id/btnDataDesc"
-        android:gravity="center">
+        android:gravity="center"
+        >
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNomeAsc"
@@ -37,7 +38,8 @@
             android:layout_weight="1"
             android:text="A-Z"
             android:checkable="true"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="10dp"
+            android:backgroundTint="#6f42c1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnNomeDesc"
@@ -46,7 +48,8 @@
             android:layout_weight="1"
             android:text="Z-A"
             android:checkable="true"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="10dp"
+            android:backgroundTint="#6f42c1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDataAsc"
@@ -55,7 +58,8 @@
             android:layout_weight="1"
             android:text="Data ↑"
             android:checkable="true"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="10dp"
+            android:backgroundTint="#6f42c1"/>
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnDataDesc"
@@ -64,7 +68,8 @@
             android:layout_weight="1"
             android:text="Data ↓"
             android:checkable="true"
-            app:cornerRadius="10dp"/>
+            app:cornerRadius="10dp"
+            android:backgroundTint="#6f42c1"/>
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <androidx.recyclerview.widget.RecyclerView

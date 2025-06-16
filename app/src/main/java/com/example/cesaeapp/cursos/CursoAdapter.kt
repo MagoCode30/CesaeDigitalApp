@@ -1,4 +1,4 @@
-package com.example.cesaeapp
+package com.example.cesaeapp.cursos
 
 import android.content.Intent
 import android.view.LayoutInflater

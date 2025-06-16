@@ -13,31 +13,31 @@
         android:theme="@style/Theme.CesaeApp"
         tools:targetApi="31">
         <activity
-            android:name=".EditarCursoActivity"
+            android:name=".cursos.EditarCursoActivity"
             android:exported="false" />
         <activity
-            android:name=".AdicionarCursoActivity"
+            android:name=".cursos.AdicionarCursoActivity"
             android:exported="false" />
         <activity
-            android:name=".DetalhesCurso"
+            android:name=".cursos.DetalhesCurso"
             android:exported="false" />
         <activity
-            android:name=".SobreActivity"
+            android:name=".sobre.SobreActivity"
             android:exported="false" />
         <activity
-            android:name=".ContactosActivity"
+            android:name=".contactos.ContactosActivity"
             android:exported="false" />
         <activity
-            android:name=".ServicosActivity"
+            android:name=".servicos.ServicosActivity"
             android:exported="false" />
         <activity
-            android:name=".ProjetosActivity"
+            android:name=".projetos.ProjetosActivity"
             android:exported="false" />
         <activity
-            android:name=".CursosActivity"
+            android:name=".cursos.CursosActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".main.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +46,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="false" />
     </application>
 

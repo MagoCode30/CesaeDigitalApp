@@ -1,4 +1,4 @@
-package com.example.cesaeapp
+package com.example.cesaeapp.cursos
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -26,6 +26,9 @@ class AdicionarCursoActivity : AppCompatActivity() {
         binding = ActivityAdicionarCursoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Adicionar Curso"
         // Configura a RecyclerView horizontal para imagens
         val adapter = ImagemEscolhaAdapter(imagensDisponiveis) { imagem ->
             imagemSelecionada = imagem
@@ -71,5 +74,10 @@ class AdicionarCursoActivity : AppCompatActivity() {
             cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)
         )
         dpd.show()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

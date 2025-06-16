@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashScreen"
+    tools:context=".main.SplashScreen"
     >
 
     <ImageView
@@ -40,7 +40,7 @@
         android:layout_marginTop="40dp"
         app:indicatorSize="55dp"
         app:trackThickness="4dp"
-        app:indicatorColor="#512DA8"
+        app:indicatorColor="#6f42c1"
         app:trackColor="#FFFFFF"
         android:indeterminate="true"/>
 
