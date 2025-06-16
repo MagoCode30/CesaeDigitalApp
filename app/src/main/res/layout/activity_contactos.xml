@@ -1,10 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".contactos.ContactosActivity">
+    android:background="#F5F5F5"
+    android:id="@+id/main">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#6f42c1"
+        app:title="Contactos"
+        app:titleTextColor="@android:color/white"
+        app:navigationIconTint="@android:color/white"
+        android:layout_alignParentTop="true"/>
+
+    <TextView
+        android:id="@+id/introText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No CESAE, valorizamos o contacto com os nossos formandos, parceiros e todos aqueles que desejam saber mais sobre o nosso trabalho."
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_margin="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Porto -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Porto"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: Rua Ciríaco Cardoso, 186 4150-212 Porto"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 226 195 200"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: porto@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- São João da Madeira -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="São João da Madeira"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: SANJOTEC - R. de Fundões 151, 3700-121 São João da Madeira"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 256 001 923"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: sjmadeira@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Leça da Palmeira -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leça da Palmeira"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: Av Dr. António Macedo, Edificio AEP - Formação Profissional 4450-617 Leça da Palmeira"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 229 981 975"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: lecadalpalmeira@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Marco de Canaveses -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marco de Canaveses"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: R. Visconde do Marco 197, 4630-273 Marco de Canaveses"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 255 534 268"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: marcodecanaveses@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Vila do Conde -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vila do Conde"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: Av. Júlio Graça 558, 4480-672 Vila do Conde"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 252 638 018"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: viladoconde@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Viseu -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Viseu"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#6f42c1"/>
+                    <View
+                        android:layout_width="32dp"
+                        android:layout_height="2dp"
+                        android:background="#6f42c1"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="8dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Morada: Rua Almirante Afonso Cerqueira, 30 3510-007 Viseu"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacto: 232 432 217 / 232 432 219"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: viseu@cesae.pt"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="8dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
