@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:padding="12dp">
 
-        <!-- Imagem do curso à esquerda -->
+        <!-- Imagem do curso -->
         <ImageView
             android:id="@+id/imgCurso"
             android:layout_width="64dp"
@@ -23,7 +23,7 @@
             android:contentDescription="Imagem do Curso"
             android:layout_centerVertical="true"/>
 
-        <!-- Preço à direita, alinhado ao topo -->
+        <!-- Preço à direita -->
         <TextView
             android:id="@+id/txtPreco"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginEnd="8dp"/>
 
-        <!-- Nome do curso (grande), ao lado da imagem -->
+        <!-- Nome do curso -->
         <TextView
             android:id="@+id/txtNomeCurso"
             android:layout_width="0dp"
@@ -51,9 +51,9 @@
             android:layout_toStartOf="@id/txtPreco"
             android:layout_alignParentTop="true"
             android:layout_marginStart="12dp"
-            android:layout_marginEnd="8dp"
-            />
+            android:layout_marginEnd="8dp"/>
 
+        <!-- Local -->
         <TextView
             android:id="@+id/txtLocal"
             android:layout_width="wrap_content"
@@ -66,7 +66,7 @@
             android:layout_marginTop="4dp"
             android:textStyle="bold"/>
 
-        <!-- Data de início, logo abaixo do nome -->
+        <!-- Data de início -->
         <TextView
             android:id="@+id/txtDataInicio"
             android:layout_width="wrap_content"

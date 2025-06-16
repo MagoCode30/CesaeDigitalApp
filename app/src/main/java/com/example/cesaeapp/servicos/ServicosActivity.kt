@@ -8,6 +8,9 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.cesaeapp.R
 import com.example.cesaeapp.databinding.ActivityServicosBinding
 
+/**
+ * Activity "Serviços" que apresenta vários serviços do CESAE em cards scrolláveis.
+ */
 class ServicosActivity : AppCompatActivity() {
     private lateinit var binding: ActivityServicosBinding
     override fun onCreate(savedInstanceState: Bundle?) {

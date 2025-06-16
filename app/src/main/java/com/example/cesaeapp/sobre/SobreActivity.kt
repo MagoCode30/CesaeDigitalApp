@@ -11,6 +11,10 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.cesaeapp.R
 import com.example.cesaeapp.databinding.ActivitySobreBinding
 
+/**
+ * Activity "Sobre" que apresenta informação sobre o CESAE e o programador.
+ * Inclui link direto para o perfil do LinkedIn do autor.
+ */
 class SobreActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySobreBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +31,7 @@ class SobreActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Sobre"
 
+        // Torna o texto do LinkedIn clicável e abre o perfil no browser
         val linkedinView = findViewById<TextView>(R.id.linkLinkedin)
         linkedinView.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)

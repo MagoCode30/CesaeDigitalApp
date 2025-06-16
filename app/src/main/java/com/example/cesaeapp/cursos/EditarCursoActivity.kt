@@ -17,6 +17,10 @@ import com.example.cesaeapp.viewmodel.CursoViewModel
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
+/**
+ * Activity para editar um curso já existente.
+ * Reutiliza o layout e lógica da AdicionarCursoActivity.
+ */
 class EditarCursoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAdicionarCursoBinding
     private val viewModel: CursoViewModel by viewModels()
@@ -30,13 +34,13 @@ class EditarCursoActivity : AppCompatActivity() {
         binding = ActivityAdicionarCursoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Toolbar
+        // Toolbar com botão de voltar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Editar Curso"
         binding.toolbar.setNavigationOnClickListener { finish() }
 
-        // ID do curso a editar
+        // Verifica o id do curso a editar
         cursoId = intent.getIntExtra("id", -1)
         if (cursoId == -1) {
             Toast.makeText(this, "Erro ao carregar curso!", Toast.LENGTH_SHORT).show()
@@ -51,7 +55,7 @@ class EditarCursoActivity : AppCompatActivity() {
         binding.rvImagens.adapter = adapter
         binding.rvImagens.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        // Configurar DatePicker nos campos de data
+        // Configura o DatePicker nos campos de data
         binding.editDataInicio.setOnClickListener {
             mostrarDatePicker(binding.editDataInicio)
         }
@@ -59,7 +63,7 @@ class EditarCursoActivity : AppCompatActivity() {
             mostrarDatePicker(binding.editDataFim)
         }
 
-        // Carregar dados do curso e preencher o formulário
+        // Carrega os dados do curso e preenche o formulário
         viewModel.getById(cursoId) { curso ->
             curso?.let {
                 runOnUiThread {
@@ -75,11 +79,12 @@ class EditarCursoActivity : AppCompatActivity() {
             }
         }
 
-        // Botão Guardar faz update!
+        // Botão guardar faz update em vez de insert!
         binding.btnGuardar.text = "Guardar alterações"
         binding.btnGuardar.setOnClickListener {
             binding.btnGuardar.isEnabled = false
 
+            // Esconde o teclado após guardar
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
 

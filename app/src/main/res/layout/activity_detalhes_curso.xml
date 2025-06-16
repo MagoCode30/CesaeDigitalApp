@@ -7,6 +7,7 @@
     android:background="@android:color/white"
     android:id="@+id/main">
 
+    <!-- Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,7 +18,7 @@
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true"/>
 
-    <!-- Conteúdo scrollável -->
+    <!-- Scrollable content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -117,6 +118,7 @@
                 android:paddingTop="12dp"/>
         </LinearLayout>
     </ScrollView>
+    <!-- Botões Editar/Remover -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

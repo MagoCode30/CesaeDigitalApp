@@ -13,21 +13,24 @@ import com.example.cesaeapp.R
 import com.example.cesaeapp.databinding.ActivityDetalhesCursoBinding
 import com.example.cesaeapp.viewmodel.CursoViewModel
 
+/**
+ * Activity que mostra os detalhes de um curso, permite editar ou remover.
+ */
 class DetalhesCurso : AppCompatActivity() {
     private lateinit var binding: ActivityDetalhesCursoBinding
     private val viewModel: CursoViewModel by viewModels()
 
+    // Launcher para editar e atualizar dados ao voltar
     private val editarLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
         if (result.resultCode == RESULT_OK) {
             val idCurso = result.data?.getIntExtra("id", -1) ?: -1
             if (idCurso != -1) {
+                // Recarrega dados do curso atualizado
                 viewModel.getById(idCurso) { curso ->
                     curso?.let {
-                        runOnUiThread {
-                            atualizarUI(it)
-                        }
+                        runOnUiThread { atualizarUI(it) }
                     }
                 }
             }
@@ -40,6 +43,7 @@ class DetalhesCurso : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
+        // Ajusta para system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -52,6 +56,7 @@ class DetalhesCurso : AppCompatActivity() {
 
         carregarDadosDaIntent()
 
+        // Remover curso com confirmação
         binding.btnRemover.setOnClickListener {
             AlertDialog.Builder(this)
                 .setTitle("Remover Curso")
@@ -71,6 +76,7 @@ class DetalhesCurso : AppCompatActivity() {
                 .show()
         }
 
+        // Editar curso (vai buscar pelo id)
         binding.btnEditar.setOnClickListener {
             val editIntent = Intent(this, EditarCursoActivity::class.java)
             editIntent.putExtra("id", intent.getIntExtra("id", -1))
@@ -78,6 +84,9 @@ class DetalhesCurso : AppCompatActivity() {
         }
     }
 
+    /**
+     * Carrega os dados passados pela Intent (primeiro carregamento).
+     */
     private fun carregarDadosDaIntent() {
         binding.txtNomeCurso.text = intent.getStringExtra("nome")
         val nomeImagem = intent.getStringExtra("imagem")
@@ -91,6 +100,9 @@ class DetalhesCurso : AppCompatActivity() {
         binding.txtPreco.text = "Preço: " + intent.getDoubleExtra("preco", 0.0) + " €"
     }
 
+    /**
+     * Atualiza os dados da UI após edição (fetch do Room).
+     */
     private fun atualizarUI(curso: com.example.cesaeapp.model.Curso) {
         binding.txtNomeCurso.text = curso.nome
         val resourceId = resources.getIdentifier(curso.imagem, "drawable", packageName)
@@ -108,3 +120,4 @@ class DetalhesCurso : AppCompatActivity() {
         return true
     }
 }
+

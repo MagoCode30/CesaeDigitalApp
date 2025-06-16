@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Toolbar Material -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true" />
 
+    <!-- Card Sobre o CESAE -->
     <androidx.cardview.widget.CardView
         android:id="@+id/sobreCesae"
         android:layout_width="match_parent"
@@ -56,6 +58,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- Card Sobre o Programador -->
     <androidx.cardview.widget.CardView
         android:id="@+id/sobreDev"
         android:layout_width="match_parent"

@@ -5,11 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cesaeapp.databinding.ItemImagemEscolhaBinding
 
+/**
+ * Adapter horizontal para seleção visual de imagens.
+ * Realça visualmente a imagem selecionada.
+ */
 class ImagemEscolhaAdapter(
     private val imagens: List<String>,
     private val onImagemSelecionada: (String) -> Unit
 ) : RecyclerView.Adapter<ImagemEscolhaAdapter.ImagemViewHolder>() {
 
+    // Guarda qual a imagem selecionada para feedback visual
     private var imagemSelecionada: String? = null
 
     inner class ImagemViewHolder(val binding: ItemImagemEscolhaBinding)
@@ -29,7 +34,7 @@ class ImagemEscolhaAdapter(
         )
         holder.binding.imgEscolha.setImageResource(resourceId)
 
-        // Realce visual se está selecionada
+        // Destaque visual para a imagem selecionada
         holder.binding.imgEscolha.alpha = if (nomeImagem == imagemSelecionada) 1.0f else 0.6f
 
         holder.itemView.setOnClickListener {

@@ -9,6 +9,7 @@
     android:background="#F5F5F5"
     android:orientation="vertical">
 
+    <!-- Toolbar Material -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true"/>
 
-    <!-- Cards Scrolláveis -->
+    <!-- Conteúdo scrollável com cards de serviço -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +32,7 @@
             android:orientation="vertical"
             android:padding="12dp">
 
-            <!-- Card 1 -->
+            <!-- Card 1: WebSIGA -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +79,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 2 -->
+            <!-- Card 2: Centro de Exames -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +125,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 3 -->
+            <!-- Card 3: Aplicações SAGE -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
