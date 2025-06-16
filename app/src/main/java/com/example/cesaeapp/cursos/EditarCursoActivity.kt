@@ -82,27 +82,74 @@ class EditarCursoActivity : AppCompatActivity() {
         // Botão guardar faz update em vez de insert!
         binding.btnGuardar.text = "Guardar alterações"
         binding.btnGuardar.setOnClickListener {
-            binding.btnGuardar.isEnabled = false
-
             // Esconde o teclado após guardar
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
 
+            // Leitura dos campos com trim()
+            val nome = binding.editNome.text.toString().trim()
+            val local = binding.editLocal.text.toString().trim()
+            val dataInicio = binding.editDataInicio.text.toString().trim()
+            val dataFim = binding.editDataFim.text.toString().trim()
+            val precoText = binding.editPreco.text.toString().trim()
+            val duracao = binding.editDuracao.text.toString().trim()
+            val edicao = binding.editEdicao.text.toString().trim()
+            val imagem = imagemSelecionada ?: imagensDisponiveis[0]
+
+            // Validação obrigatória
+            when {
+                nome.isEmpty() -> {
+                    Toast.makeText(this, "O nome é obrigatório.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                local.isEmpty() -> {
+                    Toast.makeText(this, "O local é obrigatório.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                dataInicio.isEmpty() -> {
+                    Toast.makeText(this, "A data de início é obrigatória.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                dataFim.isEmpty() -> {
+                    Toast.makeText(this, "A data de fim é obrigatória.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                precoText.isEmpty() -> {
+                    Toast.makeText(this, "O preço é obrigatório.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                precoText.toDoubleOrNull() == null || precoText.toDouble() <= 0 -> {
+                    Toast.makeText(this, "O preço deve ser um número maior que zero.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                duracao.isEmpty() -> {
+                    Toast.makeText(this, "A duração é obrigatória.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                edicao.isEmpty() -> {
+                    Toast.makeText(this, "A edição é obrigatória.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            }
+
+            // Tudo OK, faz update!
+            binding.btnGuardar.isEnabled = false
+
             lifecycleScope.launch {
                 val cursoAtualizado = Curso(
                     id = cursoId,
-                    nome = binding.editNome.text.toString(),
-                    local = binding.editLocal.text.toString(),
-                    dataInicio = binding.editDataInicio.text.toString(),
-                    dataFim = binding.editDataFim.text.toString(),
-                    preco = binding.editPreco.text.toString().toDoubleOrNull() ?: 0.0,
-                    duracao = binding.editDuracao.text.toString(),
-                    edicao = binding.editEdicao.text.toString(),
-                    imagem = imagemSelecionada ?: imagensDisponiveis[0]
+                    nome = nome,
+                    local = local,
+                    dataInicio = dataInicio,
+                    dataFim = dataFim,
+                    preco = precoText.toDouble(),
+                    duracao = duracao,
+                    edicao = edicao,
+                    imagem = imagem
                 )
                 viewModel.updateCurso(cursoAtualizado)
 
-                Toast.makeText(this@EditarCursoActivity, "Curso atualizado!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@EditarCursoActivity, "Curso atualizado com sucesso!", Toast.LENGTH_SHORT).show()
 
                 val resultIntent = Intent().apply {
                     putExtra("id", cursoId)
