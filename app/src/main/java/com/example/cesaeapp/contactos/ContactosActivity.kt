@@ -13,23 +13,20 @@ import com.example.cesaeapp.databinding.ActivityContactosBinding
  * Estrutura simples, apenas leitura.
  */
 class ContactosActivity : AppCompatActivity() {
-    // Binding para acesso seguro às views
-    private lateinit var binding: ActivityContactosBinding
 
+    private lateinit var binding: ActivityContactosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityContactosBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        // Ajusta as system bars para um layout moderno (edge-to-edge)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Configura toolbar Material
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Contactos"

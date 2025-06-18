@@ -34,7 +34,6 @@ class EditarCursoActivity : AppCompatActivity() {
         binding = ActivityAdicionarCursoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Toolbar com botão de voltar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Editar Curso"

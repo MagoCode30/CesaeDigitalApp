@@ -44,7 +44,7 @@
             android:padding="12dp">
 
             <!-- Um card por localidade -->
-            <!-- Exemplo do Porto, os outros seguem igual -->
+            <!-- Porto -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

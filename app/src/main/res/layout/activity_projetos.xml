@@ -31,7 +31,7 @@
             android:orientation="vertical"
             android:padding="12dp">
 
-            <!-- Card 1 -->
+            <!-- Card 1 Digital Reskilling-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -78,7 +78,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 2 -->
+            <!-- Card 2 Emprego +Digital -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card 3 -->
+            <!-- Card 3 Aprendizagem +-->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

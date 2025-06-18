@@ -18,22 +18,22 @@ class CursoRepository(private val cursoDao: CursoDao) {
     fun getAllByNomeDesc(): LiveData<List<Curso>> = cursoDao.getAllByNomeDesc()
     fun getAllByDataAsc(): LiveData<List<Curso>> = cursoDao.getAllByDataAsc()
 
-    // Insere um curso (suspenso)
+    // Insere um curso
     suspend fun insert(curso: Curso) {
         cursoDao.insert(curso)
     }
 
-    // Atualiza um curso (suspenso)
+    // Atualiza um curso
     suspend fun update(curso: Curso) {
         cursoDao.update(curso)
     }
 
-    // Remove um curso (suspenso)
+    // Remove um curso
     suspend fun delete(curso: Curso) {
         cursoDao.delete(curso)
     }
 
-    // Retorna um curso por ID (suspenso)
+    // Retorna um curso por ID
     suspend fun getById(id: Int): Curso? {
         return cursoDao.getById(id)
     }

@@ -18,7 +18,6 @@
         app:navigationIconTint="@android:color/white"
         android:layout_alignParentTop="true"/>
 
-    <!-- Scrollable content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -118,6 +117,7 @@
                 android:paddingTop="12dp"/>
         </LinearLayout>
     </ScrollView>
+
     <!-- Botões Editar/Remover -->
     <LinearLayout
         android:layout_width="match_parent"

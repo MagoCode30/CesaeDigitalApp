@@ -15,7 +15,6 @@ class CursoAdapter(
     private var cursos: List<Curso>
 ) : RecyclerView.Adapter<CursoAdapter.CursoViewHolder>() {
 
-    // ViewHolder que encapsula o binding do item
     inner class CursoViewHolder(val binding: ItemCursoBinding)
         : RecyclerView.ViewHolder(binding.root)
 

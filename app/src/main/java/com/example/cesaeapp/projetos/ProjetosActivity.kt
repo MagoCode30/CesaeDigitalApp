@@ -13,7 +13,7 @@ import com.example.cesaeapp.databinding.ActivityProjetosBinding
  * Pronto para expansão dinâmica.
  */
 class ProjetosActivity : AppCompatActivity() {
-    // Binding para acesso seguro às views
+
     private lateinit var binding: ActivityProjetosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,14 +22,13 @@ class ProjetosActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(binding.root)
 
-        // Ajusta system bars (edge-to-edge)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Configura toolbar
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Projetos"

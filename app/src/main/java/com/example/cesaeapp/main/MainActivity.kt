@@ -20,16 +20,14 @@ import com.example.cesaeapp.sobre.SobreActivity
  */
 class MainActivity : AppCompatActivity() {
 
-    // ViewBinding para aceder facilmente às views do layout
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        enableEdgeToEdge() // Garante que o layout ocupa toda a área do ecrã
+        enableEdgeToEdge()
         setContentView(binding.root)
 
-        // Ajusta o layout para não sobrepor as system bars (barra de status/nav)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

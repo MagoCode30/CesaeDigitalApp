@@ -58,7 +58,7 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Card Sobre o Programador -->
+    <!-- Card Sobre o Dev -->
     <androidx.cardview.widget.CardView
         android:id="@+id/sobreDev"
         android:layout_width="match_parent"

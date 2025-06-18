@@ -18,7 +18,6 @@ import java.util.Calendar
  */
 class AdicionarCursoActivity : AppCompatActivity() {
 
-    // ViewBinding para aceder facilmente às views
     private lateinit var binding: ActivityAdicionarCursoBinding
 
     // ViewModel para interagir com a camada de dados
@@ -35,7 +34,6 @@ class AdicionarCursoActivity : AppCompatActivity() {
         binding = ActivityAdicionarCursoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configuração da toolbar com botão de back
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = "Adicionar Curso"
